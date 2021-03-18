@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h1>Url Shortner</h1>
+        <form action="" method="POST" class="my-4 form-inline">
+            <label for="FullUrl" class="sr-only"></label>
+            <input required placeholder="Url" type="url" name="fullurl" id="fullurl" class="form-control col mr-2">
+            <button class="btn btn-success" type="submit">Shrink</button>
+        </form>
+        <a href="/all-urls">List of all urls</a>
+    </div>
+{% endblock content %}

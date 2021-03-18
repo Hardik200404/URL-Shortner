@@ -1,0 +1,17 @@
+#This will the additional configuration of nginx to loadbalance between 2 server instances of the web application
+#We can metion more server and their port no.s on which they are running
+#Add this configuration inside the http block and outside the main server tag in main nginx configuration file
+#Localhost:8080/ we be the address of nginx server which will act as the rev proxy for the web application 
+
+upstream localhost {
+        server localhost:2000;
+        server localhost:3000;
+    }
+    server { 
+        listen 8080;
+        server_name localhost;
+
+        location / {
+            proxy_pass http://localhost;
+        }
+    }
